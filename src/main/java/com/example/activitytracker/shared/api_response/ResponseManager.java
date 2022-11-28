@@ -12,8 +12,6 @@ import java.util.Collections;
 @AllArgsConstructor
 public class ResponseManager<T> {
 
-    private final Clock clock;
-
     public ApiResponse<T> success(HttpStatus status, T data) {
         return new ApiResponse<>(
                 status.value(),
@@ -21,7 +19,7 @@ public class ResponseManager<T> {
                 Collections.singletonList("Request successful"),
                 true,
                 data,
-                LocalDateTime.now(clock)
+                LocalDateTime.now(Clock.systemUTC())
         );
     }
 
@@ -32,7 +30,7 @@ public class ResponseManager<T> {
                 Collections.singletonList(errorMessage),
                 false,
                 null,
-                LocalDateTime.now(clock)
+                LocalDateTime.now(Clock.systemUTC())
         );
     }
 

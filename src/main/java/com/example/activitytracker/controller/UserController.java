@@ -24,7 +24,6 @@ import java.time.Clock;
 public class UserController {
 
     private final UserService userService;
-    private final ResponseManager<UserRest> responseManager;
 
     @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
@@ -32,6 +31,6 @@ public class UserController {
         ModelMapper mapper = new ModelMapper();
         UserDto userDto = mapper.map(userRequest, UserDto.class);
         UserRest userRest = mapper.map(userService.createUser(userDto), UserRest.class);
-        return responseManager.success(HttpStatus.CREATED, userRest);
+        return new ResponseManager<UserRest>().success(HttpStatus.CREATED, userRest);
     }
 }
