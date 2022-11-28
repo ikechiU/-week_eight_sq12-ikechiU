@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86f806e-d226-4683-b982-1719200ef633" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/activitytracker/model/request/TaskRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/activitytracker/shared/api_response/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/activitytracker/shared/api_response/ResponseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/activitytracker/ActivitytrackerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/activitytracker/ActivitytrackerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/activitytracker/controller/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/activitytracker/controller/TaskControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/TaskControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/TaskControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/UserControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +23,14 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +61,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Hl5PJVqiA8BZQx8WQMa29Gi5PX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,13 +77,19 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/decagon/Desktop/Decagon Weekly Task/week8/src/main/java/com/example/activitytracker/exception",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/Users/decagon/Desktop/Decagon Weekly Task/week8",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "spring.configuration.checksum": "27164c152e63732fac5ab7c4386d35ce"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mysql"
+      "mysql",
+      "h2"
     ]
   }
 }]]></component>
@@ -89,6 +100,13 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/example/activitytracker/shared/api_response" />
       <recent name="$PROJECT_DIR$/src/main/java/com/example/activitytracker/model" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.activitytracker.controller" />
+      <recent name="com.example.activitytracker.service.impl" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.activitytracker.model" />
       <recent name="com.example.activitytracker.exception" />
@@ -97,7 +115,82 @@
       <recent name="com.example.activitytracker.shared.utils" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.com.example.activitytracker in activitytracker">
+    <configuration name="TaskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activitytracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.activitytracker.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.activitytracker.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.activitytracker.controller.TaskControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskControllerTest.deleteTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activitytracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.activitytracker.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.activitytracker.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.activitytracker.controller.TaskControllerTest" />
+      <option name="METHOD_NAME" value="deleteTask" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskControllerTest.getTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activitytracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.activitytracker.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.activitytracker.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.activitytracker.controller.TaskControllerTest" />
+      <option name="METHOD_NAME" value="getTask" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example.activitytracker in activitytracker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activitytracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.activitytracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.activitytracker" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.example.activitytracker.controller in activitytracker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activitytracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.activitytracker.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.activitytracker.controller" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ActivitytrackerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="activitytracker" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.activitytracker.ActivitytrackerApplication" />
@@ -105,6 +198,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.com.example.activitytracker in activitytracker" />
+        <item itemvalue="JUnit.com.example.activitytracker.controller in activitytracker" />
+        <item itemvalue="JUnit.TaskControllerTest.deleteTask" />
+        <item itemvalue="JUnit.TaskControllerTest" />
+        <item itemvalue="JUnit.TaskControllerTest.getTask" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,6 +218,9 @@
       <updated>1668846810401</updated>
       <workItem from="1668846814113" duration="1673000" />
       <workItem from="1668852171868" duration="40777000" />
+      <workItem from="1669042358273" duration="14318000" />
+      <workItem from="1669064403815" duration="7824000" />
+      <workItem from="1669302844581" duration="48100000" />
     </task>
     <servers />
   </component>
@@ -137,19 +242,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/controller/TaskController.java</url>
-          <line>44</line>
+          <line>41</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/activitytracker/service/impl/TaskServiceImplTest.java</url>
+          <line>247</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/activitytracker/service/impl/TaskServiceImpl.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

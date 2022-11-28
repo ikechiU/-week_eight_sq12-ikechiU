@@ -2,7 +2,9 @@ package com.example.activitytracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.StaticApplicationContext;
 
 import javax.annotation.PostConstruct;
 import java.time.Clock;
@@ -23,6 +25,16 @@ public class ActivitytrackerApplication {
     @Bean
     public Clock clock() {
         return Clock.systemUTC();
+    }
+
+    @Bean
+    public SpringApplicationContext springApplicationContext() {
+        return new SpringApplicationContext();
+    }
+
+    @Bean
+    public ApplicationContext applicationContext() {
+        return new SpringApplicationContext().getCONTEXT();
     }
 
 }
