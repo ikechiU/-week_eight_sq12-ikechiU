@@ -17,10 +17,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,6 +54,7 @@ class TaskControllerTest {
     private TaskRest taskRest;
 
     private List<TaskDto> taskDtos;
+    private List<TaskRest> taskRests;
 
 
     @BeforeEach
@@ -76,7 +79,7 @@ class TaskControllerTest {
         taskRest.setCompletedAt(null);
 
         taskDto = new TaskDto();
-        taskDto.setTaskId("agvdjfbf");
+        taskDto.setTaskId("agvdjfba");
         taskDto.setTitle("A sample task title");
         taskDto.setDescription("A sample task description");
         taskDto.setStatus(TaskCategory.PENDING.getStatus());
@@ -85,9 +88,9 @@ class TaskControllerTest {
         taskDto.setCompletedAt(null);
 
         taskDto1 = new TaskDto();
-        taskDto1.setTaskId("agvdjfbf");
-        taskDto1.setTitle("A sample task title");
-        taskDto1.setDescription("A sample task description");
+        taskDto1.setTaskId("agvdjfbb");
+        taskDto1.setTitle("A sample task title1");
+        taskDto1.setDescription("A sample task description1");
         taskDto1.setStatus(TaskCategory.IN_PROGRESS.getStatus());
         taskDto1.setCreatedAt(LocalDateTime.now(Clock.systemUTC()));
         taskDto1.setUpdatedAt(LocalDateTime.now(Clock.systemUTC()));
@@ -95,16 +98,26 @@ class TaskControllerTest {
 
         taskDto2 = new TaskDto();
         taskDto2.setTaskId("agvdjfbf");
-        taskDto2.setTitle("A sample task title");
-        taskDto2.setDescription("A sample task description");
+        taskDto2.setTitle("A sample task title2");
+        taskDto2.setDescription("A sample task description2");
         taskDto2.setStatus(TaskCategory.IN_PROGRESS.getStatus());
         taskDto2.setCreatedAt(LocalDateTime.now(Clock.systemUTC()));
         taskDto2.setUpdatedAt(LocalDateTime.now(Clock.systemUTC()));
         taskDto2.setCompletedAt(null);
 
+        taskDtos = new ArrayList<>();
         taskDtos.add(taskDto);
         taskDtos.add(taskDto1);
         taskDtos.add(taskDto2);
+
+        TaskRest taskRest1 = new ModelMapper().map(taskDto1, TaskRest.class);
+        TaskRest taskRest2 = new ModelMapper().map(taskDto2, TaskRest.class);
+
+        taskRests = new ArrayList<>();
+        taskRests.add(taskRest);
+        taskRests.add(taskRest1);
+        taskRests.add(taskRest2);
+
     }
 
     @Test
@@ -115,7 +128,7 @@ class TaskControllerTest {
 
         ApiResponse<TaskRest> response = taskController.createTask(userId, taskRequest);
         assertNotNull(response.getData());
-        assertEquals("agvdjfbf", response.getData().getTaskId());
+        assertEquals("agvdjfba", response.getData().getTaskId());
         verify(taskService, times(1)).createTask(userId, dto);
     }
 
@@ -156,25 +169,56 @@ class TaskControllerTest {
     @Test
     void getAllTasks() {
         when(taskService.getAllTasks(anyString())).thenReturn(taskDtos);
-        when(responseManager.success(eq(HttpStatus.OK), any(TaskRest.class)))
-                .thenReturn(new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest));
+        when(manager.success(eq(HttpStatus.OK), anyList()))
+                .thenReturn(new ResponseManager<List<TaskRest>>().success(HttpStatus.OK, taskRests));
 
-        ApiResponse<TaskRest> response = taskController.getTask(userId, taskId);
+        ApiResponse<List<TaskRest>> response = taskController.getAllTasks(userId);
         assertNotNull(response.getData());
-        verify(taskService, times(1)).getTask(userId, taskId);
+        verify(taskService, times(1)).getAllTasks(userId);
     }
 
     @Test
     void getAllTasksByStatus() {
+        when(taskService.getAllTasksByStatus(anyString(), anyString()))
+                .thenReturn(taskDtos);
+        when(manager.success(eq(HttpStatus.OK), anyList()))
+                .thenReturn(new ResponseManager<List<TaskRest>>().success(HttpStatus.OK, taskRests));
 
+        ApiResponse<List<TaskRest>> response =
+                taskController.getAllTasksByStatus(userId, TaskCategory.PENDING.getStatus());
+
+        assertNotNull(response);
+        verify(taskService, times(1))
+                .getAllTasksByStatus(userId, TaskCategory.PENDING.getStatus());
     }
 
     @Test
     void changeStatus() {
+        when(taskService.changeStatus(anyString(), anyString(), anyString()))
+                .thenReturn(taskDto);
+        when(responseManager.success(eq(HttpStatus.OK), any(TaskRest.class)))
+                .thenReturn(new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest));
 
+        ApiResponse<TaskRest> response =
+                taskController.changeStatus(userId, taskId, TaskCategory.DONE.getStatus());
+
+        assertNotNull(response);
+        verify(taskService, times(1))
+                .changeStatus(userId, taskId, TaskCategory.DONE.getStatus());
     }
 
     @Test
     void deleteTask() {
+        when(taskService.deleteTask(anyString(), anyString()))
+                .thenReturn(taskDto);
+        when(responseManager.success(eq(HttpStatus.OK), any(TaskRest.class)))
+                .thenReturn(new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest));
+
+        ApiResponse<TaskRest> response =
+                taskController.deleteTask(userId, taskId);
+
+        assertNotNull(response);
+        verify(taskService, times(1))
+                .deleteTask(userId, taskId);
     }
 }
