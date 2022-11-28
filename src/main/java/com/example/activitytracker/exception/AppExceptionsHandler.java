@@ -72,11 +72,6 @@ public class AppExceptionsHandler {
         return buildErrorResponse(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(value = {ConflictRequestException.class})
-    public ApiResponse handleConflictException(ActivityTrackerException ex) {
-        return buildErrorResponse(ex.getMessage(), HttpStatus.CONFLICT);
-    }
-
     @ExceptionHandler(value = IllegalStateException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ApiResponse handleIllegalStateException(IllegalStateException ex) {

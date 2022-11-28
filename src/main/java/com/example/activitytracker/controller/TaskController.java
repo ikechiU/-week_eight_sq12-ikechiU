@@ -22,9 +22,6 @@ import java.util.List;
 public class TaskController {
 
     private final TaskService taskService;
-    private final ResponseManager<TaskRest> responseManager;
-    private final ResponseManager<List<TaskRest>> manager;
-
 
     @PostMapping(path = "/{userId}/tasks")
     public ApiResponse<TaskRest> createTask(@PathVariable String userId, @RequestBody TaskRequest taskRequest) {
@@ -33,7 +30,7 @@ public class TaskController {
 
         TaskDto createdTask = taskService.createTask(userId, taskDto);
         TaskRest taskRest = mapper.map(createdTask, TaskRest.class);
-        return responseManager.success(HttpStatus.CREATED, taskRest);
+        return new ResponseManager<TaskRest>().success(HttpStatus.CREATED, taskRest);
     }
 
     @PutMapping(path = "/{userId}/tasks/{taskId}")
@@ -44,14 +41,14 @@ public class TaskController {
 
         TaskDto updatedTask = taskService.updateTask(userId, taskId, taskDto);
         TaskRest taskRest = mapper.map(updatedTask, TaskRest.class);
-        return responseManager.success(HttpStatus.OK, taskRest);
+        return new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest);
     }
 
     @GetMapping(path = "/{userId}/tasks/{taskId}")
     public ApiResponse<TaskRest> getTask(@PathVariable String userId, @PathVariable String taskId) {
         TaskDto taskDto = taskService.getTask(userId, taskId);
         TaskRest taskRest = new ModelMapper().map(taskDto, TaskRest.class);
-        return responseManager.success(HttpStatus.OK, taskRest);
+        return new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest);
     }
 
     @GetMapping(path = "/{userId}/tasks")
@@ -60,7 +57,7 @@ public class TaskController {
         Type restType = new TypeToken<List<TaskRest>>() {
         }.getType();
         List<TaskRest> taskRests = new ModelMapper().map(taskDtos, restType);
-        return manager.success(HttpStatus.OK, taskRests);
+        return new ResponseManager<List<TaskRest>>().success(HttpStatus.OK, taskRests);
     }
 
     @GetMapping(path = "/{userId}/tasks/status/{status}")
@@ -69,7 +66,7 @@ public class TaskController {
         Type restType = new TypeToken<List<TaskRest>>() {
         }.getType();
         List<TaskRest> taskRests = new ModelMapper().map(taskDtos, restType);
-        return manager.success(HttpStatus.OK, taskRests);
+        return new ResponseManager<List<TaskRest>>().success(HttpStatus.OK, taskRests);
     }
 
     @GetMapping(path = "/{userId}/tasks/{taskId}/{changeStatus}")
@@ -77,12 +74,12 @@ public class TaskController {
                                               @PathVariable String changeStatus) {
         TaskDto taskDto = taskService.changeStatus(userId, taskId, changeStatus);
         TaskRest taskRest = new ModelMapper().map(taskDto, TaskRest.class);
-        return responseManager.success(HttpStatus.OK, taskRest);
+        return new ResponseManager<TaskRest>().success(HttpStatus.OK, taskRest);
     }
 
     @DeleteMapping(path = "/{userId}/tasks/{taskId}")
     public ApiResponse<TaskRest> deleteTask(@PathVariable String userId, @PathVariable String taskId) {
         taskService.deleteTask(userId, taskId);
-        return responseManager.success(HttpStatus.OK, null);
+        return new ResponseManager<TaskRest>().success(HttpStatus.OK, null);
     }
 }

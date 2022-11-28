@@ -29,8 +29,6 @@ public class TaskServiceImpl implements TaskService {
     private final UserRepository userRepository;
     private final Utils utils;
 
-    private final Clock clock;
-
     @Override
     public TaskDto createTask(String userId, TaskDto taskDto) {
         ModelMapper mapper = new ModelMapper();
@@ -95,11 +93,11 @@ public class TaskServiceImpl implements TaskService {
     public TaskDto changeStatus(String userId, String taskId, String changeStatus) {
         findUserByUserId(userId);
         Task task = findTaskByTaskId(taskId);
-        checkStatus(task.getStatus(), changeStatus.toLowerCase());
+        checkForStatusChangeError(task.getStatus(), changeStatus.toLowerCase());
 
         String status = searchStatus(changeStatus);
         if (status.equals(TaskCategory.DONE.getStatus()))
-            task.setCompletedAt(LocalDateTime.now(clock));
+            task.setCompletedAt(LocalDateTime.now(Clock.systemUTC()));
         task.setStatus(status);
         Task updatedTaskStatus = taskRepository.save(task);
         return new ModelMapper().map(updatedTaskStatus, TaskDto.class);
@@ -123,13 +121,14 @@ public class TaskServiceImpl implements TaskService {
                 orElseThrow(() -> new ActivityTrackerException(ErrorMessages.WRONG_TASK_ID.getErrorMessage()));
     }
 
-    private void checkStatus(String status, String changeStatus) {
+    private void checkForStatusChangeError(String status, String changeStatus) {
         if (status.equals(TaskCategory.IN_PROGRESS.getStatus())) {
             if (status.equals(changeStatus))
                 throw new ActivityTrackerException(ErrorMessages.ALREADY_IN_PROGRESS_STATE.getErrorMessage());
         }
 
-        if (status.equals(TaskCategory.PENDING.getStatus())) {
+        if (status.equals(TaskCategory.INCOMPLETE.getStatus())) {
+            status = TaskCategory.PENDING.getStatus();
             if (status.equals(changeStatus))
                 throw new ActivityTrackerException(ErrorMessages.ALREADY_IN_PENDING_STATE.getErrorMessage());
         }
