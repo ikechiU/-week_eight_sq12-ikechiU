@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86f806e-d226-4683-b982-1719200ef633" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/activitytracker/controller/TaskControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/activitytracker/controller/TaskControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/activitytracker/controller/TaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/TaskControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/TaskControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/activitytracker/controller/UserControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,30 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/Users/decagon/Desktop/Decagon Weekly Task/week8",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "spring.configuration.checksum": "27164c152e63732fac5ab7c4386d35ce"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/decagon/Desktop/Decagon Weekly Task/week8&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;27164c152e63732fac5ab7c4386d35ce&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/activitytracker/exception" />
@@ -115,7 +113,7 @@
       <recent name="com.example.activitytracker.shared.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.com.example.activitytracker in activitytracker">
+  <component name="RunManager" selected="Spring Boot.ActivitytrackerApplication">
     <configuration name="TaskControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="activitytracker" />
       <extension name="coverage">
@@ -200,8 +198,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.com.example.activitytracker in activitytracker" />
         <item itemvalue="JUnit.com.example.activitytracker.controller in activitytracker" />
+        <item itemvalue="JUnit.com.example.activitytracker in activitytracker" />
         <item itemvalue="JUnit.TaskControllerTest.deleteTask" />
         <item itemvalue="JUnit.TaskControllerTest" />
         <item itemvalue="JUnit.TaskControllerTest.getTask" />
@@ -220,7 +218,12 @@
       <workItem from="1668852171868" duration="40777000" />
       <workItem from="1669042358273" duration="14318000" />
       <workItem from="1669064403815" duration="7824000" />
-      <workItem from="1669302844581" duration="48100000" />
+      <workItem from="1669302844581" duration="54793000" />
+      <workItem from="1669826569511" duration="5289000" />
+      <workItem from="1669910275185" duration="554000" />
+      <workItem from="1669933008505" duration="1754000" />
+      <workItem from="1670182730348" duration="2450000" />
+      <workItem from="1672917141535" duration="601000" />
     </task>
     <servers />
   </component>
